@@ -1,0 +1,132 @@
+127.0.0.1:6379> set name "Shreya"
+OK
+127.0.0.1:6379> get name
+"Shivam"
+127.0.0.1:6379> set email ishreyashankar@gmail.com
+OK
+127.0.0.1:6379> get email
+"ishreyashankar@gmail.com"
+127.0.0.1:6379> getrange email 0 3
+"Shre"
+127.0.0.1:6379> mset lang English technology Redis
+OK
+127.0.0.1:6379> mget lang technology
+1) "English"
+2) "Redis"
+127.0.0.1:6379> strlen lang
+(integer) 7
+127.0.0.1:6379> strlen technology
+(integer) 5
+127.0.0.1:6379> set name "Shreya_jpg"
+OK
+127.0.0.1:6379> get name
+"Shreya_jpg"
+127.0.0.1:6379> strlen name
+(integer) 7
+127.0.0.1:6379> set count q
+OK
+127.0.0.1:6379> set count 1
+OK
+127.0.0.1:6379> get count
+"1"
+127.0.0.1:6379> incr count
+(integer) 2
+127.0.0.1:6379> incrby count 10
+(integer) 12
+127.0.0.1:6379> decr count
+(integer) 11
+127.0.0.1:6379> decrby count 10
+(integer) 1
+127.0.0.1:6379> set a 1
+OK
+127.0.0.1:6379> get a
+"1"
+127.0.0.1:6379> expire a 10
+(integer) 1
+127.0.0.1:6379> ttl a
+(integer) 6
+127.0.0.1:6379> ttl a
+(integer) 5
+127.0.0.1:6379> ttl a
+(integer) 2
+127.0.0.1:6379> ttl a
+(integer) 0
+127.0.0.1:6379> ttl a
+(integer) -2
+
+127.0.0.1:6379> setex b 10 anyvalue
+OK
+127.0.0.1:6379> get b
+"anyvalue"
+127.0.0.1:6379> ttl b
+(integer) 6
+127.0.0.1:6379> ttl b
+(integer) 3
+127.0.0.1:6379> ttl b
+(integer) 0
+
+
+list commmands:
+
+127.0.0.1:6379> keys *
+1) "name"
+2) "lang"
+3) "technology"
+4) "count"
+5) "pi"
+6) "email"
+127.0.0.1:6379> flushall
+OK
+127.0.0.1:6379> keys *
+(empty list or set)
+
+127.0.0.1:6379> lpush country India
+(integer) 1
+127.0.0.1:6379> lpush country USA
+(integer) 2
+127.0.0.1:6379> lrange country 0 -1
+1) "USA"
+2) "India"
+127.0.0.1:6379> lpush country UK
+(integer) 3
+127.0.0.1:6379> lrange country 0 -1
+1) "UK"
+2) "USA"
+3) "India"
+127.0.0.1:6379> rpush country Australia
+(integer) 4
+127.0.0.1:6379> lrange country 0 -1
+1) "UK"
+2) "USA"
+3) "India"
+4) "Australia"
+127.0.0.1:6379> llen country
+(integer) 4
+127.0.0.1:6379> llen aa
+(integer) 0
+127.0.0.1:6379> rpop country
+"Australia"
+127.0.0.1:6379> lpop country
+"UK"
+
+127.0.0.1:6379> lset country 0 Germany
+OK
+127.0.0.1:6379> lrange country 0 -1
+1) "Germany"
+2) "USA"
+3) "India"
+127.0.0.1:6379> linsert country before Germany "New zealand"
+(integer) 4
+127.0.0.1:6379> lrange country 0 -1
+1) "New zealand"
+2) "Germany"
+3) "USA"
+4) "India"
+127.0.0.1:6379> linsert country after USA UAE
+(integer) 5
+127.0.0.1:6379> lrange country 0 -1
+1) "New zealand"
+2) "Germany"
+3) "USA"
+4) "UAE"
+5) "India"

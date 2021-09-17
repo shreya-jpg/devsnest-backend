@@ -1,0 +1,39 @@
+electricity flow
+solid > liq > gas
+
+-= second stage se hi wired
+ 
+mobile -> (wifi/celular) -> ISP/icann LOCALVENDORS -> dnsAddres
+
+file -> binary -> intoPackets -> mobile collects then club -> then render
+
+
+Protocols
+|
+|-> TCP/IP   Transport Data
+|-> HTTP/HTTPs   WebAccess
+|-> RTP    Live Stream
+
+
+REST 
+represntable state transfer
+- can be cached
+
+CRUD
+Create - Post
+Read - Get
+Update - Put
+Delete - Delete
+
+Requests
+|
+|-> Header
+|-> Param/Body
+
+End Point - path / passed options
+Operation - get post
+
+Response
+|
+|-> Header
+|-> JSON

@@ -1,0 +1,47 @@
+postgres=# CREATE DATABASE test
+postgres-# ;
+CREATE DATABASE
+postgres=#
+
+postgres=# \l
+                                                 List of databases
+   Name    |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges
+-----------+----------+----------+----------------------------+----------------------------+-----------------------
+ postgres  | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ template0 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+           |          |          |                            |                            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+           |          |          |                            |                            | postgres=CTc/postgres
+ test      | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+(4 rows)
+postgres=# \c test
+You are now connected to database "test" as user "postgres".
+test=# \c postgres
+You are now connected to database "postgres" as user "postgres".
+postgres=# DROP DATABASE test
+postgres-# ;
+DROP DATABASE
+postgres=# \l
+                                                 List of databases
+   Name    |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges
+-----------+----------+----------+----------------------------+----------------------------+-----------------------
+ postgres  | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ template0 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+           |          |          |                            |                            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+           |          |          |                            |                            | postgres=CTc/postgres
+(3 rows)
+
+postgres=# CREATE TABLE person(
+postgres(# id INT,
+postgres(# first_name VARCHAR(50),
+postgres(# last_name VARCHAR(50),
+postgres(# gender VARCHAR(7),
+postgres(# date_of_birth DATE);
+CREATE TABLE
+postgres=# \d
+         List of relations
+ Schema |  Name  | Type  |  Owner
+--------+--------+-------+----------
+ public | person | table | postgres
+(1 row)
