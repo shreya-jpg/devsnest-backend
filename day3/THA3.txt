@@ -1,7 +1,7 @@
 127.0.0.1:6379> set name "Shreya"
 OK
 127.0.0.1:6379> get name
-"Shivam"
+"Shreya"
 127.0.0.1:6379> set email ishreyashankar@gmail.com
 OK
 127.0.0.1:6379> get email
